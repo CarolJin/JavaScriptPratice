@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Calculator from Li Jin</title>
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="LoanAppUI.css">
+</head>
+<body>
+<table>
+    <tr><th>Enter Loan Data:</th>
+        <td></td>
+        <th>Loan Balance, Cumulative Equity, and Interest Payments</th></tr>
+    <tr><td>Amount of the loan ($):</td>
+        <td><input id="amount" placeholder="e.g. 780000">
+        <p id="AmtMessage"></p></td>
+        <td rowspan=8>
+            <canvas id="graph" width="400" height="250"></canvas></td></tr>
+    <tr><td>Annual interest (%):</td>
+        <td><input id="apr" placeholder="e.g.3.9">
+        <p id="InterestMessage"></p></td></tr>
+    <tr><td>Repayment period (years):</td>
+        <td><input id="years" placeholder="e.g.30">
+        <p id="YearMessage"></p></td>
+    <tr><td>Zipcode (to find lenders):</td>
+        <td><input id="zipcode" placeholder="e.g.95134"></td>
+    <tr><th>Approximate Payments:</th>
+    <td><button type="button" id="calculateBtn">Calculate</button></td></tr>
+    <tr><td>Monthly payment:</td>
+        <td>$<span class="output" id="payment"></span></td></tr>
+    <tr><td>Total payment:</td>
+        <td>$<span class="output" id="total"></span></td></tr>
+    <tr><td>Total interest:</td>
+        <td>$<span class="output" id="totalinterest"></span></td></tr>
+    <tr><th>Sponsors:</th><td colspan=2>
+        Apply for your loan with one of these fine lenders:
+        <div id="lenders"></div></td></tr>
+</table>
+<script src="app.js"></script>
+</body>
+</html>

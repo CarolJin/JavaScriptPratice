@@ -1,0 +1,6 @@
+img {
+    -webkit-mask-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/851550/spongebob.gif);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    max-width: 100%;
+}

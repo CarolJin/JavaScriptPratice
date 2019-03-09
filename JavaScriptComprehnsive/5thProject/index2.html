@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGUrQiyc0nEZ7afQOC94o1iIMlIhH3n8o" async defer></script>
+</head>
+
+<style>
+    #container{
+        width: 400px;
+        height: 400px;
+        position: relative;
+        background: lightyellow;
+    }
+</style>
+
+<body>
+<script src="app.js"></script>
+<div id="container">
+    <div id="output"></div>
+</div>
+<input type="button" value="Find Me" onclick="locateMe()">
+</body>
+</html>

@@ -1,0 +1,98 @@
+/*Tips and tricks
+A solution will not be provided for the lab. But, to try to help you out, here are some tips you might find helpful.
+
+First, break the requirements down into steps, and then implement each step. For example, for the hover requirements:
+
+The user hovers over a circle. That circle, and all the ones to its left, must be highlighted.
+To implement this, we must first discover what circle the user has moved their mouse over.
+Then, we need to select that circle, and the ones to the left of it in the collection of circles.
+We must highlight those circles. This can be done by adding a class to those circles. The class provided is highlight.
+We must ensure the circles to the right aren't highlighted. You could do this by removing the highlight class.
+Some methods you might find helpful:
+
+get
+index
+addClass
+removeClass
+attr
+each
+children
+find
+Please note that not all of the methods listed above are needed for the answer.*/
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        body {
+            font-family: Verdana;
+        }
+        h1, h2, h3 {
+            color: darkblue;
+        }
+        .rating-circle {
+            height: 2em;
+            width: 2em;
+            border: .1em solid black;
+            border-radius: 1.1em;
+            display: inline-block;
+            margin: 0;
+            padding: .1em;
+        }
+
+        .rating-hover {
+            background-color: yellow;
+        }
+
+        .rating-chosen {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<h1>Contoso Web Developer Conference</h1>
+<h2>Finding elements using jQuery</h2>
+<div>This session is about identifying elements using jQuery methods and selectors.</div>
+<h3>Rate this session</h3>
+<div id="rating-container">
+    <div class="rating-circle"></div>
+    <div class="rating-circle"></div>
+    <div class="rating-circle"></div>
+    <div class="rating-circle"></div>
+    <div class="rating-circle"></div>
+</div>
+
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+
+<script>
+    $('.rating-circle').mouseover(function () {
+        let currentIndex = $('.rating-circle').index(this);
+        $('.rating-circle').each(function (index) {
+            if(index<=currentIndex){
+                $(this).addClass('rating-hover');
+            }
+        });
+    });
+    $('.rating-circle').mouseout(function () {
+        let currentIndex = $('.rating-circle').index(this);
+        $('.rating-circle').each(function (index) {
+            if(index>currentIndex){
+                console.log('current index value '+ currentIndex);
+                console.log('The Index value '+ index);
+                let container = $('#rating-container');
+                let element = $('.rating-circle').get(index);
+                $(element).removeClass('rating-hover');
+            }
+        });
+    });
+    $('.rating-circle').click(function () {
+        let currentIndex = $('.rating-circle').index(this);
+        $('.rating-circle').each(function (index) {
+            if(index<=currentIndex){
+                $(this).addClass('rating-chosen');
+            }
+        });
+    });
+</script>
+</body>
+</html>

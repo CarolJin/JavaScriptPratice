@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
+</head>
+
+<style>
+  .container{
+      width: 400px;
+      height: 400px;
+      position: relative;
+      background: #0d66a3;
+  }
+    #animate {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background: red;
+    }
+
+</style>
+
+<body>
+<script src="app.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGUrQiyc0nEZ7afQOC94o1iIMlIhH3n8o"
+        async defer></script>
+<div class="container">
+    <div id="output"></div>
+    <div id="animate"></div>
+</div>
+<input type="button" value="Move Me" onclick="makeMeMove()" />
+<input type="button" value="Find Me" onclick="LocateMe()" />
+</body>
+</html>
